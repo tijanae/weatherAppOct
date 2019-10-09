@@ -21,7 +21,6 @@
 		4EAA899C234E395E00F5FA0F /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA899B234E395E00F5FA0F /* ImageHelper.swift */; };
 		4EAA899E234E396E00F5FA0F /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA899D234E396E00F5FA0F /* PersistenceHelper.swift */; };
 		4EAA89A1234E3F7900F5FA0F /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA89A0234E3F7900F5FA0F /* WeatherCollectionViewCell.swift */; };
-		4EAA89A3234E653600F5FA0F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA89A2234E653600F5FA0F /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +52,6 @@
 		4EAA899B234E395E00F5FA0F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		4EAA899D234E396E00F5FA0F /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		4EAA89A0234E3F7900F5FA0F /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
-		4EAA89A2234E653600F5FA0F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +121,6 @@
 				4EAA8995234E391500F5FA0F /* DayDetailViewController.swift */,
 				4EAA8993234E38E900F5FA0F /* FavesViewController.swift */,
 				4EAA8974234E388F00F5FA0F /* mainViewController.swift */,
-				4EAA89A2234E653600F5FA0F /* Secrets.swift */,
 				4EAA89A0234E3F7900F5FA0F /* WeatherCollectionViewCell.swift */,
 			);
 			path = Views;
@@ -250,7 +247,6 @@
 				4EAA8996234E391500F5FA0F /* DayDetailViewController.swift in Sources */,
 				4EAA899E234E396E00F5FA0F /* PersistenceHelper.swift in Sources */,
 				4EAA899C234E395E00F5FA0F /* ImageHelper.swift in Sources */,
-				4EAA89A3234E653600F5FA0F /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
