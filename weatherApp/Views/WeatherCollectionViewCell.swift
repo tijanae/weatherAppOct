@@ -14,5 +14,14 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var date: UILabel!
     
-    @IBOutlet weak var hiLowTempLabel: UIView!
+    @IBOutlet weak var tempHi: UILabel!
+    
+    @IBOutlet weak var tempLow: UILabel!
+    
+    
+    func configureCell(weather: Weather) {
+        tempHi.text = "High: \(weather.temperatureHigh)"
+        tempLow.text = "Low: \(weather.temperatureLow)"
+        
+    }
 }
