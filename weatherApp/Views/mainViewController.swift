@@ -83,16 +83,9 @@ class ViewController: UIViewController {
         }
     }
     
-//    private func getWeatherImage (weatherData: Weather) {
-//        let weatherImage = weatherData.icon.text
-//        
-//        switch weatherImage {
-//        case "partly-cloudy-day":
-//            <#code#>
-//        default:
-//            <#code#>
-//        }
-//    }
+ 
+    
+
 //    func collectionLayout () {
 //        let layout = weatherCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
 //        layout.scrollDirection = .horizontal
@@ -114,6 +107,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             WeatherCollectionViewCell
         let weather = weatherData[indexPath.row]
         cell.configureCell(weather: weather)
+        
         return cell
     }
     
@@ -135,4 +129,7 @@ extension ViewController: UITextFieldDelegate {
 //            var zipCode = String(textField.text!)
         }
     }
+    
+    
+    
 }

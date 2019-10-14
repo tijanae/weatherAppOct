@@ -26,6 +26,7 @@ struct Weather: Codable {
     let temperatureLow: Double
     let windSpeed: Double
     
+    
 }
 
 /*
