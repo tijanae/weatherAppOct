@@ -21,12 +21,13 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     let dated = DateFormatter()
     
     func configureCell(weather: Weather) {
-        
+        date.text = weather.dated.description
         tempHi.text = "High: \(weather.temperatureHigh)"
         tempLow.text = "Low: \(weather.temperatureLow)"
         weatherImage.image = getWeatherImage(weatherData: weather)
         
     }
+    
     func getWeatherImage (weatherData: Weather) -> UIImage {
         let weatherImage = weatherData.icon.description
        

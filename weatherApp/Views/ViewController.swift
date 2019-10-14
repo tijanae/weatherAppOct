@@ -23,16 +23,14 @@ class ViewController: UIViewController {
         didSet {
             weatherCollectionView.reloadData()
             print(weatherData)
+            
         }
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
         loadDefaults()
-      
         // Do any additional setup after loading the view.
     }
     
@@ -54,14 +52,19 @@ class ViewController: UIViewController {
                 switch result {
                 case let .failure(error):
                     print(error)
-                case let .success((lat, long)):
+                case let .success((lat, long, name)):
                     UserDefaults.standard.set(lat, forKey: "latitude")
                     UserDefaults.standard.set(long, forKey: "longitude")
-                    
+                    UserDefaults.standard.set(name, forKey: "name")
+                    self.cityName.text = name.description.capitalized
+                    self.getData(latitude: lat, longitude: long)
                 }
             }
         }
     }
+    
+//    pass city name to detailed view look into custom delegation.
+    
     
     private func loadDefaults() {
         if let lat = UserDefaults.standard.value(forKey: "latitude") as? Double, let long = UserDefaults.standard.value(forKey: "longitude") as? Double {
@@ -84,7 +87,6 @@ class ViewController: UIViewController {
     }
     
  
-    
 
 //    func collectionLayout () {
 //        let layout = weatherCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -115,6 +117,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return CGSize(width: 175, height: 250)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailedWeather = weatherData[indexPath.row]
+        let detailedView = DayDetailViewController()
+        detailedView.detailedDay = detailedWeather
+       self.navigationController?.pushViewController(detailedView, animated: true)
+        
+    }
+    
     
 }
 
@@ -126,7 +136,7 @@ extension ViewController: UITextFieldDelegate {
         if textField.text?.count == 5 {
             textField.resignFirstResponder()
             loadData(zipCode: textField.text!)
-//            var zipCode = String(textField.text!)
+           
         }
     }
     

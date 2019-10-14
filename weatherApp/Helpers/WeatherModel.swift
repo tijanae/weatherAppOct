@@ -17,15 +17,36 @@ struct WeatherWrapper: Codable {
 }
 
 struct Weather: Codable {
-    let time: Int
+    let time: Double
     let icon: String
-    let sunriseTime: Int
-    let sunsetTime: Int
+    let sunriseTime: Double
+    let sunsetTime: Double
     let precipProbability: Double
     let temperatureHigh: Double
     let temperatureLow: Double
     let windSpeed: Double
-    
+    var dated: String {
+        let weatherDate = NSDate(timeIntervalSince1970: time) as Date
+        let thisDate = DateFormatter()
+        thisDate.dateFormat = "MMM-dd-yyyy"
+        return thisDate.string(from: weatherDate)
+    }
+    var todaySunrise: String {
+        let weatherSunrise = NSDate(timeIntervalSince1970: sunriseTime) as Date
+        let thisSunrise = DateFormatter()
+        thisSunrise.dateFormat = "HH:MM a"
+        thisSunrise.amSymbol = "AM"
+        thisSunrise.pmSymbol = "PM"
+        return thisSunrise.string(from: weatherSunrise)
+    }
+    var tonightSunset: String {
+        let weatherSunset = NSDate(timeIntervalSince1970: sunsetTime) as Date
+        let thisSunset = DateFormatter()
+        thisSunset.dateFormat = "HH:MM a"
+        thisSunset.amSymbol = "AM"
+        thisSunset.pmSymbol = "PM"
+        return thisSunset.string(from: weatherSunset)
+    }
     
 }
 

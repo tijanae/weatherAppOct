@@ -181,6 +181,21 @@
             </objects>
             <point key="canvasLocation" x="879.71014492753625" y="403.79464285714283"/>
         </scene>
+        <!--Day Detail View Controller-->
+        <scene sceneID="ZgQ-wf-ZL0">
+            <objects>
+                <viewController id="KKR-NI-hyH" customClass="DayDetailViewController" customModule="weatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ifO-4y-erG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="vTp-8v-HhO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Wh-Y2-k8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2791" y="-289"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cloud.sun" catalog="system" width="64" height="44"/>
