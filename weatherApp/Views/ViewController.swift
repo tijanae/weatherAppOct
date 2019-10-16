@@ -45,6 +45,7 @@ class ViewController: UIViewController {
             
     }
     
+    var searchedCityName = ""
     
     private func loadData (zipCode: String) {
         ZipCodeHelper.getLatLong(fromZipCode: zipCode) { (result) in
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
                     UserDefaults.standard.set(long, forKey: "longitude")
                     UserDefaults.standard.set(name, forKey: "name")
                     self.cityName.text = name.description.capitalized
+                    self.searchedCityName = name.description.capitalized
                     self.getData(latitude: lat, longitude: long)
                 }
             }
@@ -67,7 +69,9 @@ class ViewController: UIViewController {
     
     
     private func loadDefaults() {
-        if let lat = UserDefaults.standard.value(forKey: "latitude") as? Double, let long = UserDefaults.standard.value(forKey: "longitude") as? Double {
+        if let lat = UserDefaults.standard.value(forKey: "latitude") as? Double, let long = UserDefaults.standard.value(forKey: "longitude") as? Double, let name = UserDefaults.standard.value(forKey: "name") {
+            self.searchedCityName = name as! String
+            self.cityName.text = name as! String
             getData(latitude: lat, longitude: long)
         }
     }
@@ -121,6 +125,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let detailedWeather = weatherData[indexPath.row]
         let detailedView = DayDetailViewController()
         detailedView.detailedDay = detailedWeather
+        detailedView.cityName = searchedCityName
        self.navigationController?.pushViewController(detailedView, animated: true)
         
     }

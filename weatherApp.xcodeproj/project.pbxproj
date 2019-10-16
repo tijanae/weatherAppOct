@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		4E0FAEB3234E6BA400E08DE7 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0FAEB2234E6BA400E08DE7 /* Secrets.swift */; };
 		4E0FAEB5234EA68600E08DE7 /* WeatherApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0FAEB4234EA68600E08DE7 /* WeatherApiHelper.swift */; };
-		4E0FAEB7234EB31100E08DE7 /* CityAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0FAEB6234EB31100E08DE7 /* CityAPIHelper.swift */; };
+		4E0FAEB7234EB31100E08DE7 /* PhotoApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0FAEB6234EB31100E08DE7 /* PhotoApiHelper.swift */; };
 		4E51CA74234FCCBB00EFC2DE /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51CA73234FCCBB00EFC2DE /* ZipCodeHelper.swift */; };
 		4E51CAA423510CE300EFC2DE /* icons8-downpour.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E51CAA323510CE300EFC2DE /* icons8-downpour.png */; };
 		4E620FDF23550836002E6506 /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E620FDE23550836002E6506 /* DetailedView.swift */; };
+		4E620FE123554656002E6506 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E620FE023554656002E6506 /* PhotoModel.swift */; };
+		4E620FE3235693B7002E6506 /* ImagePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E620FE2235693B7002E6506 /* ImagePersistence.swift */; };
 		4EAA8971234E388F00F5FA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA8970234E388F00F5FA0F /* AppDelegate.swift */; };
 		4EAA8973234E388F00F5FA0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA8972234E388F00F5FA0F /* SceneDelegate.swift */; };
 		4EAA8975234E388F00F5FA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA8974234E388F00F5FA0F /* ViewController.swift */; };
@@ -42,10 +44,12 @@
 /* Begin PBXFileReference section */
 		4E0FAEB2234E6BA400E08DE7 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Secrets.swift; path = ../Secrets.swift; sourceTree = "<group>"; };
 		4E0FAEB4234EA68600E08DE7 /* WeatherApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiHelper.swift; sourceTree = "<group>"; };
-		4E0FAEB6234EB31100E08DE7 /* CityAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAPIHelper.swift; sourceTree = "<group>"; };
+		4E0FAEB6234EB31100E08DE7 /* PhotoApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApiHelper.swift; sourceTree = "<group>"; };
 		4E51CA73234FCCBB00EFC2DE /* ZipCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
 		4E51CAA323510CE300EFC2DE /* icons8-downpour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-downpour.png"; sourceTree = "<group>"; };
 		4E620FDE23550836002E6506 /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
+		4E620FE023554656002E6506 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		4E620FE2235693B7002E6506 /* ImagePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePersistence.swift; sourceTree = "<group>"; };
 		4EAA896D234E388F00F5FA0F /* weatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EAA8970234E388F00F5FA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EAA8972234E388F00F5FA0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,8 +137,8 @@
 			children = (
 				4EAA8974234E388F00F5FA0F /* ViewController.swift */,
 				4EAA89A0234E3F7900F5FA0F /* WeatherCollectionViewCell.swift */,
-				4E620FDE23550836002E6506 /* DetailedView.swift */,
 				4EAA8995234E391500F5FA0F /* DayDetailViewController.swift */,
+				4E620FDE23550836002E6506 /* DetailedView.swift */,
 				4EAA8993234E38E900F5FA0F /* FavesViewController.swift */,
 			);
 			path = Views;
@@ -144,12 +148,14 @@
 			isa = PBXGroup;
 			children = (
 				4EAA8999234E395000F5FA0F /* NetworkHelper.swift */,
+				4E0FAEB4234EA68600E08DE7 /* WeatherApiHelper.swift */,
+				4E51CA73234FCCBB00EFC2DE /* ZipCodeHelper.swift */,
+				4E0FAEB6234EB31100E08DE7 /* PhotoApiHelper.swift */,
 				4EAA899B234E395E00F5FA0F /* ImageHelper.swift */,
 				4EAA899D234E396E00F5FA0F /* PersistenceHelper.swift */,
-				4E0FAEB4234EA68600E08DE7 /* WeatherApiHelper.swift */,
-				4E0FAEB6234EB31100E08DE7 /* CityAPIHelper.swift */,
-				4E51CA73234FCCBB00EFC2DE /* ZipCodeHelper.swift */,
+				4E620FE2235693B7002E6506 /* ImagePersistence.swift */,
 				4EAA8997234E394200F5FA0F /* WeatherModel.swift */,
+				4E620FE023554656002E6506 /* PhotoModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -256,15 +262,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E620FE3235693B7002E6506 /* ImagePersistence.swift in Sources */,
 				4EAA899A234E395000F5FA0F /* NetworkHelper.swift in Sources */,
 				4EAA8994234E38E900F5FA0F /* FavesViewController.swift in Sources */,
 				4EAA8975234E388F00F5FA0F /* ViewController.swift in Sources */,
 				4EAA8971234E388F00F5FA0F /* AppDelegate.swift in Sources */,
 				4EAA8973234E388F00F5FA0F /* SceneDelegate.swift in Sources */,
 				4EAA89A1234E3F7900F5FA0F /* WeatherCollectionViewCell.swift in Sources */,
+				4E620FE123554656002E6506 /* PhotoModel.swift in Sources */,
 				4EAA8998234E394200F5FA0F /* WeatherModel.swift in Sources */,
 				4E620FDF23550836002E6506 /* DetailedView.swift in Sources */,
-				4E0FAEB7234EB31100E08DE7 /* CityAPIHelper.swift in Sources */,
+				4E0FAEB7234EB31100E08DE7 /* PhotoApiHelper.swift in Sources */,
 				4E51CA74234FCCBB00EFC2DE /* ZipCodeHelper.swift in Sources */,
 				4EAA8996234E391500F5FA0F /* DayDetailViewController.swift in Sources */,
 				4EAA899E234E396E00F5FA0F /* PersistenceHelper.swift in Sources */,
