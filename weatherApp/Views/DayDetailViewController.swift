@@ -30,6 +30,7 @@ class DayDetailViewController: UIViewController {
         view.backgroundColor = .white
         loadImage()
         setUI()
+        self.navigationItem.rightBarButtonItem = detailedView.faveButton
         
         
         
@@ -53,20 +54,6 @@ class DayDetailViewController: UIViewController {
     }
 
     
-//    private func loadImage() {
-//        PhotoApiHelper.shared.getCityImage(name: cityName) { (result) in
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .failure(let error):
-//                    print(error)
-//                case .success(let cityImageFromOnline):
-//                    self.thisCityImage = cityImageFromOnline
-//                    print(self.thisCityImage)
-//
-//                }
-//            }
-//        }
-//    }
     
     private func loadImage() {
         PhotoApiHelper.shared.getCityImage(name: cityName) { (result) in
@@ -93,26 +80,6 @@ class DayDetailViewController: UIViewController {
             }
         }
     }
-
-
-    
-    
-//    private func getCityImage(cityImage: UIImage) {
-//        PhotoApiHelper.shared.getCityImage(name: <#T##String#>) { (<#Result<[Photo], AppError>#>) in
-//            <#code#>
-//        }
-////        WeatherAPIHelper.shared.getWeather(lat: latitude, long: longitude) { (result) in
-////            DispatchQueue.main.async {
-////                switch result {
-////                case .failure(let error):
-////                    print(error)
-////                case .success(let weatherDataFromOnline):
-////                    self.weatherData = weatherDataFromOnline
-////                }
-////            }
-////        }
-//    }
-    
 
 
 }

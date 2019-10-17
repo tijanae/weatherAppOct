@@ -13,13 +13,13 @@ struct CityImagePersistenceManager {
     private init() {}
     static let manager = CityImagePersistenceManager()
     
-    private let persistenceHelper = PersistenceHelper<PhotoWrapper>(fileName: "cityImages.plist")
+    private let persistenceHelper = PersistenceHelper<SavedCityImage>(fileName: "cityImages.plist")
     
-    func savePhoto(photo: PhotoWrapper) throws {
+    func savePhoto(photo: SavedCityImage) throws {
         try persistenceHelper.save(newElement: photo)
     }
     
-    func getPhoto() throws -> [PhotoWrapper] {
+    func getPhoto() throws -> [SavedCityImage] {
         return try persistenceHelper.getObjects()
     }
 }

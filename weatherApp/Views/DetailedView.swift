@@ -56,12 +56,39 @@ class DetailedView: UIView {
         return rainDrops
     }()
     
+    lazy var faveButton: UIBarButtonItem = {
+        let savebutton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: #selector( saveCityImage(sender:)))
+
+        return savebutton
+    }()
+    
+    func getDataFromImage() -> Data? {
+        
+        guard let image = thisCity.image else {
+            return nil
+        }
+            let cityImageAsData = image.jpegData(compressionQuality: 1.0)
+
+        return cityImageAsData
+    }
     
     
-//    temp hi
-//    temp low
-//    windspeed
-//    precipitation
+    var imageName = ""
+    
+    @IBAction func saveCityImage(sender: UIBarButtonItem) {
+        
+        if imageName == "" {
+            let savedPhoto = SavedCityImage(imageName: imageName, imageData: getDataFromImage()!)
+                DispatchQueue.global(qos: .utility).async {
+                try? CityImagePersistenceManager.manager.savePhoto(photo: savedPhoto)
+                    print("you know what")
+            }
+                         
+        }
+        print("hi")
+    }
+    
+
     
     
     override init(frame: CGRect) {
